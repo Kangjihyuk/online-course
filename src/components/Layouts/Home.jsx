@@ -1,35 +1,23 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Desc from "../Elements/Decs";
 import Title from "../Elements/Title";
 import Down from "../Elements/Down";
 import Button from "../Elements/Button";
-import { getApi } from "../../api/api";
 import DropDownBtn from "../Elements/DropDownBtn";
 import Input from "../Elements/Input";
 import Image from "../Elements/image";
 
-const Home = () => {
-  const [post, setPost] = useState([]);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await getApi();
-        setPost(response.data);
-        console.log(response);
-      } catch (error) {
-        setError(error);
-      }
-    };
-    getData();
-  }, []);
-  console.log({ "api get": post });
-
+const Home = ({ course, id }) => {
   return (
     <Fragment>
-      <div className="bg-primary/40 h-[110vh] flex flex-col sm:h-[110vh] md:h-[120vh] lg:h-[140vh] xl:h-[140vh]">
+      <div className="bg-primary/40 h-full flex flex-col " id={id}>
         <div className="container flex flex-col items-center">
-          <Title title="Learn best Online Courses" />
+          <Title
+            title="Learn best Online Courses"
+            style={
+              "mt-5 lg:mt-32 text-xl sm:text-2xl md:text-3xl lg:text-5xl xl-text-6xl"
+            }
+          />
           <Desc desc="48,000 online courses for you" />
         </div>
         <div className="flex justify-center gap-1 mt-5 items-center container sm:mt-5 md:mt-10">
@@ -41,7 +29,7 @@ const Home = () => {
           <Down
             dropdownId="dropdown-hover"
             buttonId="dropdown-hover-button"
-            post={post}
+            course={course}
           />
           <div>
             <Input
