@@ -5,7 +5,7 @@ import Down from "../Elements/Down";
 import Button from "../Elements/Button";
 import DropDownBtn from "../Elements/DropDownBtn";
 import Input from "../Elements/Input";
-import Image from "../Elements/image";
+import Image from "../Elements/Image";
 
 const Home = ({ course, id }) => {
   return (
