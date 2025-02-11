@@ -1,14 +1,14 @@
 import React from "react";
 
-const image = ({ src, alt }) => {
+const Image = ({ src, alt }) => {
   return (
     <img
       src={src}
       loading="lazy"
       alt={alt}
-      className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] last: mx-auto mt-10 md:mt-5 "
+      className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[40%] mx-auto mt-10 md:mt-5 "
     />
   );
 };
 
-export default image;
+export default Image;
