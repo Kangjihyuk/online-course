@@ -26,10 +26,13 @@ const JsonCard = [
     subtitle: "100,000+",
   },
 ];
-const Card = () => {
+const Card = ({ id }) => {
   return (
     <Fragment>
-      <div className="container mt-20 lg:mt-32 grid place-content-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className="container mt-20 lg:mt-32 grid place-content-center gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        id={id}
+      >
         {JsonCard.map((card) => {
           const conditionalCLass =
             card.id === JsonCard.length

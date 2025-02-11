@@ -36,7 +36,7 @@ const LandingPage = () => {
     <>
       <Navbar />
       <Home course={course} id="home" />
-      <Card />
+      <Card id="about" />
       <Course course={course} id="course" />
       <Instructors comments={comments} />
       <Blog id={"blog"} />

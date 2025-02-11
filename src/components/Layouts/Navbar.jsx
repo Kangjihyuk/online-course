@@ -13,6 +13,9 @@ const Navbar = () => {
       setOpen(false);
     }
   };
+  const toLoginPage = () => {
+    window.location.href = "/login";
+  };
 
   window.onscroll = () => {
     scroll();
@@ -25,11 +28,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center pl-[2rem] pr-[2rem] py-[1rem] justify-between relative bg-primary/30 lg:fixed lg:w-full z-10 overflow">
+    <div className="flex items-center pl-[2rem] pr-[2rem] py-[1rem] justify-between relative bg-primary/60 lg:fixed lg:w-full z-10 overflow ">
       <Icon />
       <Hamburger handleOpen={handleOpen} />
       <NavMenu open={open} scroll={scroll} />
-      <Button buttonName="Get Started" customization="hidden sm:block" />
+      <Button
+        buttonName="Login"
+        customization="hidden sm:block"
+        classname="bg-orange-500 border-orange-500"
+        handleClick={() => toLoginPage()}
+      />
     </div>
   );
 };
